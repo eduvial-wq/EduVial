@@ -1,0 +1,11 @@
+@media (min-width: 400px) {
+    *{
+        margin: 0;
+    }
+    header{
+        background-color: rgb(255, 145, 0);
+    }
+    #logo{
+        display: none;
+    }
+}
