@@ -61,6 +61,7 @@
 
 
 
+
 /* Panel 1 */
 #punto {
     position: relative;
@@ -144,6 +145,17 @@
 }
 #boton-punto1 {
     color: white
+}
+.boton-punto2 {
+    color: white;
+    position: relative;
+    top: 180px;
+}
+.boton-punto3 {
+    color: white;
+    position: relative;
+    left: 200px;
+    top: 200px;
 }
 
 /* Panel 3 */

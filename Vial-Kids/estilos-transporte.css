@@ -625,51 +625,11 @@ section{
 .footer-links li{
     display: block;
 }
-
-/*.footer .icon-redSocial{
-    text-align: right;
+.footer-li{
     padding-left: 0;
-    margin-bottom: 0;
     list-style: none;
+    color: #303030;
 }
-
-.footer .icon-redSocial a{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 6px;
-    margin-right: 8px;
-    border-radius: 100%;
-    background-color: #969292;
-    color: #5e5e5e;
-    font-size: 16px;
-    display: inline-block;
-    text-align: center;
-    -webkit-transition:all .2s linear;
-    -o-transition:all .2s linear;
-    transition:all .2s linear
-}
-
-.icon-redSocial li{
-    display: inline-block;
-    margin-bottom: 4px;
-}
-
-.icon-redSocial li.title{
-    margin-right: 15px;
-    text-transform: uppercase;
-    color: #8a9196;
-    font-weight: 700;
-    font-size: 13px;
-}
-
-.icon-redSocial.size-sm a
-{
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
-}*/
 
 .icon-redSocial{
     display: flex;

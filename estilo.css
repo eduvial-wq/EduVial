@@ -188,6 +188,9 @@ html {
         grid-template-rows: 1fr 1fr 1fr;
         padding: 30px;
     }
+    html {
+        scrollbar-width: 1px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -232,6 +235,9 @@ html {
         grid-template-rows: 1fr 1fr 1fr;
         padding: 30px;
     }
+     html {
+        scrollbar-width: 1px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -260,6 +266,9 @@ html {
 
     .seccione3 img {
         width: 70px;
+    }
+     html {
+        scrollbar-width: 1px;
     }
 }
 
@@ -294,5 +303,8 @@ html {
     .container {
         max-width: 1200px;
         padding: 20px;
+    }
+     html {
+        scrollbar-width: 1px;
     }
 }

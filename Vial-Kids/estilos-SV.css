@@ -236,6 +236,13 @@ nav ul li{
     display: block;
 }
 
+.footer-li{
+    padding-left: 0;
+    list-style: none;
+    color: #303030;
+}
+
+
 
 .icon-redSocial{
     display: flex;
