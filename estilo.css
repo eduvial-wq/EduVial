@@ -5,7 +5,9 @@
     font-family: "Poppins", sans-serif;
     transition: all 0.3s ease;
 }
-
+html{
+    scrollbar-width: none;
+}
 body {
     background: url('images/Fondo.gif') no-repeat center center;
     background-size: cover;
