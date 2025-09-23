@@ -41,136 +41,297 @@ body {
     overflow-x: hidden;
 }
 
-/* Navegación */
+/* ========== NAVEGACIÓN MEJORADA CON ANIMACIONES ========== */
 nav {
-    background: white;
-    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-bottom: 2px solid transparent;
+    animation: slideDown 0.8s ease-out;
+}
+
+/* Efecto al hacer scroll */
+nav.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    height: 70px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-bottom: 2px solid rgba(0, 139, 255, 0.2);
 }
 
 #nav {
-    box-shadow: 0 4px 10px 0 var(--shadow-color);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
+/* Logo con animaciones mejoradas */
 .enlace {
     position: absolute;
     padding: 0 25px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.logo {
-    height: 60px;
-    width: auto;
-    display: inline-flex;
-    align-items: center;
     transition: var(--transition);
 }
 
-.logo:hover {
-    transform: rotate(360deg) scale(0.95);
-    transition: 2.5s;
+.logo {
+    height: 65px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* Menú de navegación */
+.logo:hover {
+    transform: rotate(360deg) scale(1.05);
+    filter: drop-shadow(0 8px 16px rgba(0, 139, 255, 0.3));
+}
+
+/* Menú principal con animaciones de entrada */
 nav ul {
     float: right;
-    margin-right: 20px;
+    margin-right: 30px;
     height: 80px;
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0;
+    opacity: 0;
+    animation: slideInRight 0.6s ease-out forwards;
+    animation-delay: calc(0.1s * var(--item-index, 1));
 }
 
-nav ul li a {
-    color: black;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 15px;
+/* Animación escalonada para cada elemento */
+nav ul li:nth-child(1) { --item-index: 1; }
+nav ul li:nth-child(2) { --item-index: 2; }
+nav ul li:nth-child(3) { --item-index: 3; }
+nav ul li:nth-child(4) { --item-index: 4; }
+
+/* Botones de navegación con efectos 3D */
+.btm {
+    height: 50px;
+    color: white;
+    font-size: 14px;
+    padding: 12px 18px;
     border-radius: 25px;
-    transition: var(--transition);
-    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+    min-width: 130px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    letter-spacing: 0.5px;
 }
 
-nav ul li a:hover {
-    background-color: #f0f0f0;
-    color: var(--primary-blue);
+/* Efecto de ondas en hover */
+.btm::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 0;
 }
 
-/* Botón hamburguesa */
+.btm:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Efecto de brillo */
+.btm::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(45deg) translate(-100%, -100%);
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.btm:hover::after {
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+/* Colores de botones con gradientes mejorados */
+#btn2 { 
+    background: linear-gradient(135deg, var(--primary-blue), #66b3ff);
+    box-shadow: 0 4px 15px rgba(0, 139, 255, 0.3);
+}
+
+#btn3 { 
+    background: linear-gradient(135deg, var(--primary-orange), #ff9933);
+    box-shadow: 0 4px 15px rgba(226, 108, 12, 0.3);
+}
+
+#btn4 { 
+    background: linear-gradient(135deg, var(--primary-red), #ff4d4d);
+    box-shadow: 0 4px 15px rgba(207, 21, 21, 0.3);
+}
+
+#btn5 { 
+    background: linear-gradient(135deg, var(--primary-yellow), #ffeb3b);
+    box-shadow: 0 4px 15px rgba(233, 204, 18, 0.3);
+    color: #333;
+}
+
+#btn6 { 
+    background: linear-gradient(135deg, var(--primary-green), #4caf50);
+    box-shadow: 0 4px 15px rgba(56, 133, 12, 0.3);
+}
+
+/* Hover effects con transformaciones 3D */
+#btn2:hover { 
+    background: linear-gradient(135deg, var(--hover-blue), var(--primary-blue));
+    box-shadow: 0 8px 25px rgba(0, 139, 255, 0.4);
+    transform: translateY(-5px) rotateX(10deg);
+}
+
+#btn3:hover { 
+    background: linear-gradient(135deg, var(--hover-orange), var(--primary-orange));
+    box-shadow: 0 8px 25px rgba(226, 108, 12, 0.4);
+    transform: translateY(-5px) rotateX(10deg);
+}
+
+#btn4:hover { 
+    background: linear-gradient(135deg, var(--hover-red), var(--primary-red));
+    box-shadow: 0 8px 25px rgba(207, 21, 21, 0.4);
+    transform: translateY(-5px) rotateX(10deg);
+}
+
+#btn5:hover { 
+    background: linear-gradient(135deg, var(--hover-yellow), var(--primary-yellow));
+    box-shadow: 0 8px 25px rgba(233, 204, 18, 0.4);
+    transform: translateY(-5px) rotateX(10deg);
+    color: #333;
+}
+
+#btn6:hover { 
+    background: linear-gradient(135deg, var(--hover-green), var(--primary-green));
+    box-shadow: 0 8px 25px rgba(56, 133, 12, 0.4);
+    transform: translateY(-5px) rotateX(10deg);
+}
+
+.btm:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Iconos con animaciones mejoradas */
+.icon {
+    margin-right: 10px;
+    height: 22px;
+    width: auto;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.btm:hover .icon {
+    transform: rotate(360deg) scale(1.2);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Botón hamburguesa con animaciones */
 .checkbtn {
     font-size: 30px;
-    color: black;
+    color: #333;
     float: right;
     line-height: 80px;
     margin-right: 40px;
     cursor: pointer;
     display: none;
     z-index: 1001;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.checkbtn:hover {
+    background: rgba(0, 139, 255, 0.1);
+    color: var(--primary-blue);
+    transform: scale(1.1);
 }
 
 #check {
     display: none;
 }
 
-/* Botones de navegación */
-.btm {
-    height: 40px;
-    color: white;
-    font-size: 14px;
-    padding: 12px 16px;
-    border-radius: 25px;
-    text-transform: uppercase;
-    font-weight: 650;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px 0 0;
-    text-decoration: none;
-    transition: var(--transition);
-    white-space: nowrap;
-    min-width: 120px;
+/* Efectos de pulsación para elementos interactivos */
+.btm:hover,
+.logo:hover,
+.checkbtn:hover {
+    animation: pulse 2s infinite;
 }
 
-/* Colores de botones */
-#btn2 { background: var(--primary-blue); }
-#btn3 { background: var(--primary-orange); }
-#btn4 { background: var(--primary-red); }
-#btn5 { background: var(--primary-yellow); }
-#btn6 { background: var(--primary-green); }
+/* Animaciones keyframes */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-/* Hover de botones */
-#btn2:hover { background: var(--hover-blue); }
-#btn3:hover { background: var(--hover-orange); }
-#btn4:hover { background: var(--hover-red); }
-#btn5:hover { background: var(--hover-yellow); }
-#btn6:hover { background: var(--hover-green); }
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efecto de flotación en hover */
 .btm:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: float 2s ease-in-out infinite;
 }
 
-.icon {
-    margin-right: 8px;
-    height: 20px;
-    width: auto;
-    transition: var(--transition);
-}
-
-.btm:hover .icon {
-    transform: rotate(360deg) scale(0.95);
-    transition: 2.5s;
-}
+/* ========== RESTO DEL CSS ORIGINAL ========== */
 
 /* Contenido principal */
 .contenedorImagen {
@@ -382,9 +543,15 @@ nav ul li a:hover {
     
     .btm {
         font-size: 12px;
-        margin: 0 8px 0 0;
-        min-width: 100px;
-        padding: 10px 12px;
+        margin: 0 5px 0 0;
+        min-width: 110px;
+        padding: 10px 14px;
+        height: 45px;
+    }
+    
+    .icon {
+        height: 20px;
+        margin-right: 8px;
     }
     
     #contenido {
@@ -436,102 +603,111 @@ nav ul li a:hover {
     
     /* Ajustar botones en tablets */
     nav ul {
-        margin-right: 10px;
+        margin-right: 15px;
+        gap: 5px;
     }
     
     .btm {
         font-size: 11px;
-        margin: 0 5px 0 0;
-        min-width: 90px;
+        min-width: 95px;
+        padding: 8px 12px;
+        height: 40px;
+    }
+    
+    .icon {
+        height: 18px;
+        margin-right: 6px;
     }
 }
 
-/* Móviles grandes */
+/* Móviles grandes - Menú hamburguesa mejorado */
 @media (max-width: 858px) {
-    /* Mostrar menú hamburguesa */
+    /* Mostrar menú hamburguesa con animaciones */
     .checkbtn {
         display: block;
+        line-height: 80px;
+        margin-right: 20px;
+        font-size: 28px;
     }
     
-    /* Menú móvil */
+    /* Menú móvil mejorado */
     #check:checked ~ ul {
         left: 0;
     }
     
     .logo {
-        height: 50px;
+        height: 55px;
     }
     
     nav {
         position: fixed;
         top: 0;
         z-index: 1000;
-        height: 70px;
+        height: 80px;
     }
     
-    .enlace {
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .checkbtn {
-        line-height: 70px;
-        margin-right: 20px;
-    }
-    
-    /* Ajustar contenido principal */
-    #sub-principio {
-        padding-top: 80px;
-    }
-    
-    .contenedorImagen {
-        margin-top: 90px;
-    }
-    
-    /* Menú desplegable móvil */
     nav ul {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        top: 70px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        top: 80px;
         left: -100%;
         text-align: center;
-        transition: all 0.5s ease;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 50px;
+        padding-top: 60px;
         margin-right: 0;
+        gap: 20px;
     }
     
     nav ul li {
         display: block;
-        margin: 15px 0;
+        margin: 0;
         width: 100%;
+        animation: none;
+        opacity: 1;
+        transform: translateX(100px);
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition-delay: calc(0.1s * var(--item-index, 1));
     }
     
-    nav ul li a {
-        font-size: 18px;
-        color: black;
-        padding: 15px 20px;
-        display: block;
-        width: 100%;
+    #check:checked ~ ul li {
+        transform: translateX(0);
     }
     
     .btm {
         font-size: 16px;
         color: white;
-        margin: 10px 20px;
-        width: calc(100% - 40px);
-        max-width: 300px;
+        margin: 0 auto;
+        width: 280px;
+        max-width: calc(100% - 40px);
+        height: 55px;
+        padding: 15px 20px;
+        border-radius: 30px;
+        justify-content: center;
     }
     
     .btm:hover {
-        color: white;
+        transform: translateY(-3px) scale(1.02);
     }
     
-    /* Ocultar elementos no necesarios en móvil */
+    .icon {
+        height: 24px;
+        margin-right: 10px;
+    }
+    
+    /* Contenido principal móvil */
+    #sub-principio {
+        padding-top: 90px;
+    }
+    
+    .contenedorImagen {
+        margin-top: 100px;
+    }
+    
     .non {
         display: none;
     }
@@ -540,19 +716,18 @@ nav ul li a:hover {
         display: none;
     }
     
-    /* Contenido principal en móvil */
     #contenido {
         background: url(icono/icono.png), white;
         background-repeat: no-repeat;
         background-position: right top;
         background-size: 80px;
         width: 95%;
-        margin: 90px auto 50px;
+        margin: 100px auto 50px;
         padding: 20px 15px;
     }
     
     #contenido h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         margin: 20px 0;
         text-align: left;
     }
@@ -562,83 +737,53 @@ nav ul li a:hover {
         margin: 15px 0;
         text-align: left;
     }
-    
-    /* Footer responsive */
-    .footer {
-        padding-bottom: 0;
-    }
-    
-    .footer .copyRight-text,
-    .footer .icon-redSocial {
-        text-align: center;
-    }
-    
-    .icon-redSocial {
-        justify-content: center;
-        margin: 20px 0;
-    }
-    
-    .icon-redSocial li {
-        margin: 5px;
-    }
-    
-    .icon-redSocial li a {
-        height: 45px;
-        width: 45px;
-        font-size: 20px;
-    }
 }
 
 /* Móviles pequeños */
 @media (max-width: 480px) {
     .enlace {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     
     .logo {
-        height: 40px;
+        height: 50px;
     }
     
     nav {
-        height: 60px;
+        height: 70px;
     }
     
     .checkbtn {
-        line-height: 60px;
-        font-size: 25px;
+        line-height: 70px;
+        font-size: 26px;
         margin-right: 15px;
     }
     
     nav ul {
-        top: 60px;
-        padding-top: 30px;
-    }
-    
-    nav ul li a {
-        font-size: 16px;
-        padding: 12px 15px;
+        top: 70px;
+        padding-top: 40px;
     }
     
     .btm {
-        font-size: 14px;
-        margin: 8px 15px;
-        width: calc(100% - 30px);
-        padding: 12px 16px;
+        font-size: 15px;
+        width: 260px;
+        height: 50px;
+        padding: 12px 18px;
     }
     
     .icon {
-        height: 16px;
-        margin-right: 6px;
+        height: 20px;
+        margin-right: 8px;
     }
     
     #contenido {
         background-size: 60px;
-        padding: 15px 10px;
-        margin: 70px auto 30px;
+        padding: 15px 12px;
+        margin: 80px auto 30px;
     }
     
     #contenido h1 {
-        font-size: 1.3em;
+        font-size: 1.5em;
         margin: 15px 0;
     }
     
@@ -648,81 +793,57 @@ nav ul li a:hover {
     }
     
     .contenedorImagen {
-        margin-top: 70px;
+        margin-top: 80px;
         border-radius: 8px;
-    }
-    
-    .icon-redSocial li a {
-        height: 40px;
-        width: 40px;
-        font-size: 18px;
-    }
-    
-    .footer-img-fondo .footer-auto {
-        width: 250px;
-        height: 80px;
-        left: 25%;
-    }
-    
-    .footer-img-fondo .footer-bici {
-        width: 70px;
-        height: 80px;
-        left: 10%;
     }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 360px) {
     .enlace {
-        padding: 0 5px;
+        padding: 0 10px;
+    }
+    
+    nav {
+        height: 60px;
+    }
+    
+    .checkbtn {
+        line-height: 60px;
+        font-size: 24px;
+        margin-right: 12px;
+    }
+    
+    nav ul {
+        top: 60px;
+    }
+    
+    .logo {
+        height: 45px;
+    }
+    
+    .btm {
+        font-size: 14px;
+        width: 240px;
+        height: 48px;
+        padding: 10px 16px;
+    }
+    
+    .icon {
+        height: 18px;
+        margin-right: 6px;
     }
     
     #contenido h1 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     
     #contenido p {
         font-size: 12px;
     }
-    
-    .btm {
-        font-size: 12px;
-        padding: 10px 14px;
-    }
 }
 
-/* Orientación landscape en móviles */
-@media (max-height: 500px) and (orientation: landscape) {
-    nav {
-        height: 50px;
-    }
-    
-    .checkbtn {
-        line-height: 50px;
-        font-size: 20px;
-    }
-    
-    nav ul {
-        top: 50px;
-        padding-top: 20px;
-    }
-    
-    nav ul li {
-        margin: 8px 0;
-    }
-    
-    nav ul li a {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    
-    .btm {
-        margin: 5px 15px;
-        padding: 8px 12px;
-    }
-}
-
-/* Mejoras adicionales para accesibilidad */
+/* Mejoras para accesibilidad */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -731,9 +852,8 @@ nav ul li a:hover {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-}
-
-/* Modo oscuro si el usuario lo prefiere */
-@media (prefers-color-scheme: dark) {
-    /* Se puede implementar un tema oscuro aquí si es necesario */
+    
+    .btm:hover {
+        animation: none;
+    }
 }
