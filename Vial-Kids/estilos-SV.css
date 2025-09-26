@@ -16,11 +16,13 @@ body{
 }
  
 /*Header*/
-nav{
-    background: white;
+nav {
+    background: rgb(244, 186, 86);
     height: 80px; 
     width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px 0 var(--shadow-color);
+    top: 0;
+    z-index: 1000;
 }
 
 .enlace{
@@ -144,6 +146,8 @@ nav ul li{
     height: 45vw;
     background: url(img/5.png) no-repeat center center;
     background-size: 100%;
+    position: relative;
+    top: 49px;
     display: flex;
 }
  
