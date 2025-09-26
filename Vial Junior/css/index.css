@@ -1,0 +1,292 @@
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0, 
+  'opsz' 24
+}
+
+.navbar {
+    background-color: #e8e8e8;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: #777777;
+    font-size: 24px;
+    transition: 0.3s color;
+}
+
+.login-button {
+    background-color: #777777;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #484848;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+@media (min-width: 991px) {
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #777777;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+
+}
+
+.hero-section {
+    background: url(../img/fondo.png) no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-section .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 1.5em;
+}
+
+.hero-section h2 {
+    font-size: 1.2em;
+}
+
+
+
+
+#nuestros-programas {
+    text-align: center;
+
+}
+
+#nuestros-programas .container {
+    padding: 150px 0px;
+}
+
+#nuestros-programas p {
+    display: none;
+}
+
+#nuestros-programas h2 {
+    margin-top: 0;
+    font-size: 3.2em;
+    color: #000;
+}
+#nuestros-programas h3 {
+    color: #fff;
+}
+
+#nuestros-programas .carta {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 60px;
+    margin: 20px;
+    border-radius: 20px;
+}
+.carta:first-child
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/autos.jpg"); 
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+.carta:nth-child(2)
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/motos.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+.carta:nth-child(3)
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/bicicleta.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;	
+}
+.carta:nth-child(4)
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/camiones.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;	
+}
+.carta:nth-child(5)
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/colectivos.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;	
+}
+.carta:nth-child(6)
+{
+background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0,0.5),
+    rgba(0, 0, 0,0.5)
+)
+,url("../img/trenes.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;	
+}
+.programas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+
+/* ... (resto de tu CSS) */
+
+@media (max-width: 768px) { /* Para pantallas medianas y pequeñas */
+    #nuestros-programas .programas {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
+}
+
+@media (max-width: 576px) { /* Para pantallas pequeñas */
+    #nuestros-programas .programas {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+}
+
+
+
+    /* Estilos para la sección de información de contacto */
+.contacto-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.contacto-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contacto-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilos para la sección de integrantes del equipo */
+.integrantes {
+    flex: 1;
+}
+
+.integrantes h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.integrantes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.integrantes li {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilos para el footer en general */
+footer {
+    background-color: #acacac;
+    padding: 20px 0;
+    border-top: 1px solid #4b4b4b;
+    text-align: center;
+}
+.conte {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
